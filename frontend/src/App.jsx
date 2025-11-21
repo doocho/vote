@@ -30,11 +30,11 @@ function App() {
 
     if (typeof window.ethereum !== 'undefined') {
       try {
-        // Try to switch to Anvil network
+        // Try to switch to Hoodi network
         try {
           await window.ethereum.request({
             method: 'wallet_switchEthereumChain',
-            params: [{ chainId: '0x7a69' }],
+            params: [{ chainId: '0x88bb0' }],
           });
         } catch (switchError) {
           if (switchError.code === 4902) {
@@ -42,14 +42,15 @@ function App() {
               method: 'wallet_addEthereumChain',
               params: [
                 {
-                  chainId: '0x7a69',
-                  chainName: 'Anvil Local',
-                  rpcUrls: ['http://127.0.0.1:8545'],
+                  chainId: '0x88bb0',
+                  chainName: 'Ethereum Testnet Hoodi',
+                  rpcUrls: ['https://rpc.hoodi.ethpandaops.io'],
                   nativeCurrency: {
-                    name: 'Ethereum',
+                    name: 'Hoodi Ether',
                     symbol: 'ETH',
                     decimals: 18,
                   },
+                  blockExplorerUrls: ['https://hoodi.etherscan.io'],
                 },
               ],
             });
