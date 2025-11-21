@@ -1,0 +1,18 @@
+{
+  "name": "vote",
+  "version": "1.0.0",
+  "description": "Date voting DApp using Foundry and React",
+  "type": "module",
+  "scripts": {
+    "compile": "forge build",
+    "test": "forge test",
+    "node": "anvil",
+    "deploy:local": "PRIVATE_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 forge script script/Deploy.s.sol:DeployScript --rpc-url http://127.0.0.1:8545 --broadcast",
+    "deploy:hoodi": "source .env && forge script script/Deploy.s.sol:DeployScript --rpc-url $HOODI_RPC_URL --broadcast --verify",
+    "copy-abi": "./copy-abi.sh",
+    "frontend": "cd frontend && pnpm dev"
+  },
+  "keywords": ["voting", "blockchain", "foundry", "react", "web3"],
+  "author": "",
+  "license": "ISC"
+}
